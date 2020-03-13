@@ -1,4 +1,4 @@
-\documentclass[openany]{book}
+\documentclass[openany]{article}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -21,7 +21,6 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Systems Pathology: Eye and Ear},
@@ -69,7 +68,7 @@
 \usepackage{titling}
 
 % Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
+\providecommand{\subtitle}[1]{
   \posttitle{
     \begin{center}\large#1\end{center}
     }
@@ -85,7 +84,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-03-27}
+    \date{2020-03-13}
 
 \usepackage{booktabs}
 \usepackage{booktabs}
@@ -107,11 +106,11 @@
 \maketitle
 
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
-\chapter*{About}\label{about}
-\addcontentsline{toc}{chapter}{About}
+\section*{About}\label{about}
+\addcontentsline{toc}{section}{About}
 
 These notes are a fairly comprehensive collection of information to
 complement the lectures and labs delivered in VETM2220, Systems
@@ -136,8 +135,8 @@ as a PDF on Moodle, and as an Epub (E-book format, suitable for a
 tablet). Please feel free to provide feedback, whether on content,
 style, or typos!
 
-\subsection*{Contact me}\label{contact-me}
-\addcontentsline{toc}{subsection}{Contact me}
+\subsubsection*{Contact me}\label{contact-me}
+\addcontentsline{toc}{subsubsection}{Contact me}
 
 Please don't hesitate to get in touch if you have any questions.
 
@@ -151,8 +150,8 @@ Please don't hesitate to get in touch if you have any questions.
   Office: 414N, Dept. of Pathology and Microbiology
 \end{itemize}
 
-\section*{Reference material}\label{reference-material}
-\addcontentsline{toc}{section}{Reference material}
+\subsection*{Reference material}\label{reference-material}
+\addcontentsline{toc}{subsection}{Reference material}
 
 \begin{itemize}
 \tightlist
@@ -164,8 +163,8 @@ Please don't hesitate to get in touch if you have any questions.
   Animals-E-Book (Vol. 1). Elsevier Health Sciences.
 \end{itemize}
 
-\section*{Acknowledgements}\label{acknowledgements}
-\addcontentsline{toc}{section}{Acknowledgements}
+\subsection*{Acknowledgements}\label{acknowledgements}
+\addcontentsline{toc}{subsection}{Acknowledgements}
 
 These lecture notes were prepared in R \citep{R-base} using the bookdown
 \citep{xie2015}, knitr \citep{R-knitr}, and Rmarkdown
@@ -176,15 +175,16 @@ notes from Dr.~Pierre-Yves Daoust. Images are attributed throughout the
 text; unattributed images are either mine or were found in the public
 domain.
 
-\chapter{Introduction to pathology of the eye}\label{intro}
+\section{Introduction to pathology of the eye}\label{intro}
 
 The eye is a complex, unique structure, and a thorough description of
 the anatomy and physiology of the eye is far beyond the scope of these
 notes. An excellent summary is available in Chapter 21, p.~1269-1282 of
 the reference textbook (Zachary and McGavin), and I strongly encourage
-you to read it. It will help provide a solid foundation that will allow
-you to \emph{understand} the development of ocular disease, rather than
-simply memorizing the steps and lesions involved.
+you to read it. A PDF copy of the chapter is available in Moodle. It
+will help provide a solid foundation that will allow you to
+\emph{understand} the development of ocular disease, rather than simply
+memorizing the steps and lesions involved.
 
 It is important to understand that the eye is a unique, highly organized
 structure, and that disruptions to the delicate structures of the globe
@@ -213,22 +213,22 @@ ocular anatomy as it relates to pathology, to help refresh your memory
 after having read the textbook. I've also put together a general
 \protect\hyperlink{glossary}{Glossary} to help keep track of all the
 terms that are unique to ocular pathology and ophthalmology, and which
-can be difficult to keep track of.
+seem to make up a language of their own.
 
-\hypertarget{ocular-anatomy}{\section{Ocular
+\hypertarget{ocular-anatomy}{\subsection{Ocular
 anatomy}\label{ocular-anatomy}}
 
 A schematic of the eye is show in Figure \ref{fig:globe}. The globe is
 surrounded by muscular tissue, eyelids, and a bony orbit. The globe
-itself is made up of three layers: the sclera, which is modified at its
-anterior end to become the cornea; the choroid, a portion of the
-vascular supply of the eye; and the retina, the light sensing interior
-layer. The choroid is continuous with the iris and ciliary body. The
-lens, a structure designed to refract light, is suspended by zonules
-originating from the ciliary body. These structures create several
-compartments within the eye: the anterior chamber, posterior chamber,
-and vitreous humour. Each of these structures is complex and reacts to
-injury and disease in somewhat different ways.
+itself is made up of three conceptual layers: the sclera, which is
+modified at its anterior end to become the cornea; the choroid, a
+portion of the vascular supply of the eye; and the retina, the light
+sensing interior layer. The choroid is continuous with the iris and
+ciliary body. The lens, a structure designed to refract light, is
+suspended by zonules originating from the ciliary body. These structures
+create several compartments within the eye: the anterior chamber,
+posterior chamber, and vitreous humour. Each of these structures is
+complex and reacts to injury and disease in somewhat different ways.
 
 \begin{figure}
 
@@ -242,7 +242,7 @@ injury and disease in somewhat different ways.
 The eyelids are covered on one side by haired skin, which is
 histologically similar to skin found in other areas. The other side is
 covered by conjunctival epithelium, known as the palpebral conjunctiva.
-Tear film, comprised of mucous and fluid, is present between the bulbar
+Tear film, composed of mucous and fluid, is present between the bulbar
 and palpebral conjunctiva, and is distributed through the action of
 blinking. The eyelid margin is where the anterior haired surface and
 posterior palpebral conjunctiva meet. Cilia, or eyelashes, are present
@@ -281,13 +281,13 @@ approximately once every 5 - 7 days. The corneal stroma is composed of
 thin, compact collagen fibrils arranged in parallel and separated by a
 space that corresponds to the wavelength of light, all of which serve to
 minimize the scatter of light. Importantly, \textbf{the corneal stroma
-is maintained in a dehydrated state}, through both passive and active
-means. Within the corneal endothelium are energy-dependent sodium-pumps
-that remove solutes from the corneal stroma, creating an osmotic
-gradient that allows fluid to exit the stroma. To prevent the entry of
-fluid, the corneal epi- and endothelium are both maintained by tight
-intra-cellular junctions. \textbf{Fluid within the corneal stroma is a
-common pathological finding in diseased eyes, and manifests as corneal
+is maintained in a dehydrated state}, through passive and active means.
+Within the corneal endothelium are energy-dependent sodium-pumps that
+remove solutes from the corneal stroma, creating an osmotic gradient
+that allows fluid to exit the stroma. To prevent the entry of fluid, the
+corneal epi- and endothelium are both maintained by tight intra-cellular
+junctions. \textbf{Fluid within the corneal stroma is a common
+pathological finding in diseased eyes, and manifests as corneal
 cloudiness, often with a slight blue tinge}.
 
 The cornea is \textbf{avascular}, and therefore must rely on passive
@@ -306,7 +306,7 @@ ciliary body is a small structure that extends from the posterior aspect
 of the base of the iris to the choroid. An important role of the ciliary
 body is the production of aqueous humour. It also serves to anchor the
 lens in place. The choroid supplies nutrients and oxygen to the
-posterior segment of the eye, most importantly to the retina.
+posterior segment of the eye, most notably to the retina.
 
 The lens refracts light to provide focus, and can change shape depending
 on the tension applied to the suspending zonules. A more detailed
@@ -319,19 +319,54 @@ physiological structure, and is discussed in more detail in the section
 on the \protect\hyperlink{pathology-of-the-retina}{Pathology of the
 retina}.
 
-\chapter{Pathology of the conjunctiva and
+\subsection{Submitting a globe for
+histopathology}\label{submitting-a-globe-for-histopathology}
+
+During the course of your clinical career, you will undoubetdly perform
+several enucleations, and hopefully you will submit the samples to your
+local pathologist. Putting the globe directly in formalin will usually
+provide adequtae results, however, it takes awhile for formalin to
+perfuse into the eye and fix the retina, leading to the introduction of
+possible artifact. To avoid this, inject a small amount of formalin into
+the vitreous of the eye. Use a small gauge needle (25 g or higher), and
+pierce the globe at an angle. A good place to inject is immediately
+adjacent to the optic nerve (Figure \ref{fig:globe-biopsy}). For small
+animals, about 0.5 ml of formalin is adequate; for larger animals, up to
+1 ml may be required. The globe will fill noticeably taught following
+the injection.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/globe-biopsy} 
+
+}
+
+\caption{Landmarks for injecting the globe with formalin. The eye is oriented as it would be in a live patient. The probe (representing an ideal location to inject formalin) is at the caudal aspect of the eye, and just slightly dorsal.}\label{fig:globe-biopsy}
+\end{figure}
+
+Always remember to \textbf{include a detailed and succinct history}.
+Many of the eyes that are submitted for pathology are at a similar
+``end-stage'', and determining the underlying etiology is often
+impossible based on histopathology alone. The more information you
+provide, the more information the pathologist can then provide back to
+you. Don't forget to include the duration of the clinical signs,
+treatments administered, and your differential diagnoses.
+
+\section{Pathology of the conjunctiva and
 eyelids}\label{pathology-of-the-conjunctiva-and-eyelids}
 
-\section{Conjunctivitis}\label{conjunctivitis}
+\subsection{Conjunctivitis}\label{conjunctivitis}
 
 A variety of different infectious agents can lead to inflammation of the
 conjunctiva. Among the most important in a variety of species is
 \emph{Chlamydophila}. In particular, in the cat, \emph{C. felis} is
 often associated with a primary conjunctivitis, presenting with mucoid
 neutrophilic ocular discharge. The condition is dealt with clinically
-and these globes are rarely examined microscopically.
+and these globes are rarely progress to the point where they are
+examined microscopically. Occasionally, conjunctival biopsies may be
+evaluated.
 
-\section{Dermoid}\label{dermoid}
+\subsection{Dermoid}\label{dermoid}
 
 Dermoids are a form of choristoma: the formation of a normal structure
 in an abnormal place. In the case of a conjunctival (or corneal)
@@ -348,18 +383,19 @@ corrected through a keratectomy.
 \caption{A dermoid present at the limbus (Image F33854 from Noah's Arkive)}\label{fig:dermoid}
 \end{figure}
 
-\section{Meibomian gland adenoma}\label{meibomian-gland-adenoma}
+\subsection{Meibomian gland adenoma}\label{meibomian-gland-adenoma}
 
 These are common neoplasms that occur at the eyelid margin, the only
 place in the body in which Meibomian glands are found. They make up
-almost 70 \% of canine eyelid neoplasms. They are the eyelid equivalent
+almost 70 \% of canine eyelid neoplasms, and are therefore \textbf{the
+most common eyelid neoplasm of the dog}. They are the eyelid equivalent
 to a cutaneous sebaceous adenoma, and are similarly benign and cured
 with complete resection. Grossly, they are usually well circumscribed
 and multilobular. Leakage of gland contents frequently creates a local
 granulomatous reaction that accompanies the neoplasm, known as a
 \textbf{chalazion}.
 
-\hypertarget{conjunctival-squamous-cell-carcinoma}{\section{Conjunctival
+\hypertarget{conjunctival-squamous-cell-carcinoma}{\subsection{Conjunctival
 squamous cell carcinoma}\label{conjunctival-squamous-cell-carcinoma}}
 
 Squamous cell carcinomas (SCC) of the conjunctiva or eyelid occur in all
@@ -382,7 +418,7 @@ limbus, whereas the third eyelid is the most frequently affected in
 horses. In cats, SCC tends to arise from the skin of the eyelid. For
 unknown reasons, dogs seem relatively spared from developing SCCs.
 
-\section{Melanocytic tumours}\label{melanocytic-tumours}
+\subsection{Melanocytic tumours}\label{melanocytic-tumours}
 
 Melanomas are frequent tumours of the eyelids and conjunctiva, and, in
 dogs, \textbf{prognosis mostly depends on location}. Melanocytic tumours
@@ -391,7 +427,7 @@ Those that arise from the conjunctiva are more invasive and prone to
 recurrence (somewhat like oral melanomas). Those that arise from the
 limbus are benign.
 
-\hypertarget{entropion-and-ectropion}{\section{Entropion and
+\hypertarget{entropion-and-ectropion}{\subsection{Entropion and
 ectropion}\label{entropion-and-ectropion}}
 
 Entropion refers to the inward folding of the eyelid, and is most common
@@ -403,9 +439,9 @@ predilections. Due to mechanical abraision, entropion may result in
 physical damage to the cornea. The condition is seen routinely and is
 easily fixed with minor surgery.
 
-\chapter{Pathology of the cornea}\label{pathology-of-the-cornea}
+\section{Pathology of the cornea}\label{pathology-of-the-cornea}
 
-\section{Corneal ulcers}\label{corneal-ulcers}
+\subsection{Corneal ulcers}\label{corneal-ulcers}
 
 Corneal ulcers - the erosion of the surface epithelium with exposure of
 the underlying corneal stroma - are \textbf{extremely common} and occur
@@ -419,8 +455,8 @@ well as active pumps along the corneal endothelium (explained further
 \protect\hyperlink{ocular-anatomy}{Ocular anatomy}). Thus, any break to
 the epithelial barrier will result in \textbf{stromal edema} -- through
 the absorption of tear film -- that manifests clinically as a blue-ish
-tinged cloudiness of the cornea. Neutrophils found in the tear film also
-enter the stroma through the disrupted barrier.
+tinged cloudiness of the cornea. Neutrophils found in the tear film can
+also enter the stroma through the disrupted barrier.
 
 What happens next is dependent on the degree of corneal injury. If the
 injury is relatively minor -- for example, the erosion of the
@@ -443,17 +479,19 @@ corneal stroma, the keratocytes (fibrocytes of the corneal stroma)
 undergo fibroblastic differentiation and begin producing ground
 substance. Fibroblasts and small blood vessels also begin migrating from
 the limbus, and it is these fibroblasts that are the primary source of
-collagen. This migration takes time: approximatley 4 days to get
-started, then about 1 mm every day. The new cornea is never quite the
-same as the original: although over time, the newly deposited collagen
+collagen. This migration takes time. Approximatley 4 days to get
+started, then about 1 mm every day thereafter. The new cornea is never
+quite the same as the original. Over time, the newly deposited collagen
 will organize to resemble normal stroma, and the tissue will become less
-cellular, a scar will be detectable -- though the degree to which it
-affects vision is dependent on the initial insult. The epithelial
-component of a larger wound is also different: in large defects,
-epithelial reserve cells from the limbus are recruited, and these cells
-have a conjunctival, rather than corneal, phenotype, and may be
-pigmented, though if the injurius stimulus is removed, these epithelial
-cells will gradually become more ``corneal''.
+cellular, a scar will be detectable. The degree to which a scar affects
+vision is dependent on the initial insult (Fun fact: I have a scar
+across my cornea, courtesy of an errant hockey stick. It doesn't
+obstruct my vision at all). The epithelial component of a larger wound
+is also different: in large defects, epithelial reserve cells from the
+limbus are recruited, and these cells have a conjunctival, rather than
+corneal, phenotype, and may be pigmented, though if the injurius
+stimulus is removed, these epithelial cells will gradually become more
+``corneal''.
 
 Ulcers that progress may erode through the entire corneal stroma all the
 way to Descemet's membrane. In these cases, Descemet's membrane may
@@ -471,14 +509,15 @@ induce bystander damage by lysing the corneal stroma (keratomalacia),
 and may delay healing, or even worse, lead to rapidly progressing
 corneal damage in the form of a melting ulcer.
 
-\section{Keratoconjunctivitis sicca}\label{keratoconjunctivitis-sicca}
+\subsection{Keratoconjunctivitis
+sicca}\label{keratoconjunctivitis-sicca}
 
 Keratoconjunctivitis sicca (KCS) is a condition in which the cornea
 desiccates (dries out), usually due to a decreased \textbf{quantity} of
 tear film, and rarely due to an altered quality of tear. The condition
 is most common in dogs, in which it is progressive and chronic. The
 etiology is unknown, but the success of immunosuppressive therapy
-suggests an autoimmune basis.
+suggests an \textbf{autoimmune basis}.
 
 The lesions depend on the degree to which tear film production is
 affected. Most cases are moderate in onset, and result in chronic injury
@@ -491,11 +530,11 @@ water to the cornea).
 The condition is readily treated with artificial tears and
 immunosuppressive therapy.
 
-\section{Fungal keratitis}\label{fungal-keratitis}
+\subsection{Fungal keratitis}\label{fungal-keratitis}
 
 Fungal keratitis is a particularly common and important issue in horses.
 \textbf{It is usually iatrogenic}, resulting from the treatment of a
-routine corneal ulcer with antibiotics, and especially, corticosteroids.
+routine corneal ulcer with antibiotics, and especially corticosteroids.
 Colonization of the wound by fungi (usually \emph{Aspergillus}) results
 in a deep ulcerative keratitis and is accompanied by suppurative
 keratomalacia that is refractory to treatment with antibiotics. For
@@ -507,7 +546,7 @@ therefore, when a pathology report from a horse with suspected fungal
 keratitis informs you that although no organisms were seen, the
 condition cannot be ruled out!
 
-\section{Herpesviral keratitis}\label{herpesviral-keratitis}
+\subsection{Herpesviral keratitis}\label{herpesviral-keratitis}
 
 Feline herpesvirus 1 can cause a keratitis or keratoconjunctivitis.
 Clinical signs are typically a mucopurulent ocular discharge with
@@ -515,7 +554,7 @@ conjunctivitis and keratitis (and rhinotracheitis). In younger cats, the
 disease typically manifests as conjunctivitis without keratitis, whereas
 in adult cats the opposite is true. In adults, the corneal lesions may
 present as shallow erosions that appear as very small, multifocal
-erosions or ulcers that may coalesce and have a branching or dendritic
+erosions or ulcers that may coalesce and have a branching ``dendritic''"
 appearance (Figure \ref{fig:dendritic}). Alternatively, in severe cases
 usually associated with immunosuppression, a severe keratitis may
 develop, with notable corneal edema and corneal vascularization.
@@ -529,7 +568,7 @@ develop, with notable corneal edema and corneal vascularization.
 \caption{Herpetic keratitis with dendritic (branching) ulcers. Image from [Sandmeyer et al, 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2885128/)}\label{fig:dendritic}
 \end{figure}
 
-\hypertarget{infectious-bovine-keratoconjunctivitis}{\section{Infectious
+\hypertarget{infectious-bovine-keratoconjunctivitis}{\subsection{Infectious
 bovine
 keratoconjunctivitis}\label{infectious-bovine-keratoconjunctivitis}}
 
@@ -542,16 +581,39 @@ cattle.}
 Cattle are infected by \emph{Moraxella bovis} via fly vectors, and thus
 the disease is more common during the summer months. Upon infection, the
 bacteria adhere and then invade into the corneal epithelium, resulting
-in a small corneal ulcer accompanied by conjunctival edema and
-hyperemia. If left untreated, the ulcer will enlarge, deepen, and become
-infiltrated by large numbers of neutrophils. Damage from the
-indiscriminate neutrophils results in keratomalacia. In most cases,
-healing occurs as the necrotic cornea is shed and granulation tissue
-fills the wound, eventually scarring over. Despite the often relatively
-large ulcer found in the acute stages of the condition, the final scar
-is often small and clinically insignificant.
+in a small corneal ulcer accompanied by corneal edema and hyperemia. If
+left untreated, the ulcer will enlarge, deepen, and become infiltrated
+by large numbers of neutrophils. Damage from the indiscriminate
+neutrophils results in keratomalacia. In most cases, healing occurs as
+the necrotic cornea is shed and granulation tissue fills the wound,
+eventually scarring over. Despite the often relatively large ulcer found
+in the acute stages of the condition, the final scar is often small and
+clinically insignificant.
 
-\chapter{Pathology of the uvea}\label{pathology-of-the-uvea}
+\subsection{Dystrophies and
+depositions}\label{dystrophies-and-depositions}
+
+The accumulation of material within the cornea is relatively frequently
+seen in clinical practice. It may occur as dystrophies or deposits.
+
+A dystrophy is an inherited, bilateral, defect in structure or function
+of one of the components of the cornea. It is not triggered by injury or
+disease, either directly to the eye or elsewhere in the body. The most
+common, which are seen in dogs, are lipid and crystalline dystrophies.
+In the case of the former, cholesterol is deposited in the corneal
+stroma, while in the later mineralization may be present in the
+superficial corneal stroma.
+
+Corneal deposits typically occur secondarily to metabolic disease or
+injury. Metabolic deposits include mineral, lipid, or pigment. The most
+common metabolic deposit, again seen in dogs, takes the form of corneal
+lipid associated with hyperlipidemia of any cause - though often
+associated with Cushing's disease, diabetes mellitus, or hypothyroidism.
+
+Corneal deposits secondary to injury are again most common in dogs.
+Melanin deposits occur in corneas subject to chronic irritation.
+
+\section{Pathology of the uvea}\label{pathology-of-the-uvea}
 
 Uveitis is commonly encountered, and a good understanding of
 pathophysiology of the disease will serve you well in practice.
@@ -568,12 +630,11 @@ range of impacts beyond the uvea itself.
 
 The iris is a relatively porous tissue, and when inflamed, leukocytes,
 blood and/or fibrin exit vessels and rapidly transit through the iris
-and into the aqueous. Clinically (or grossly), this can manifests as an
-accumulation of cells and/or prortein in the anterior chamber. Hyphema
-is the presence of hemorrhage within the anterior chamber, while
-hypopyon is an accumulation of neutrophils. Aqueous flare is the
-clinically visualized presence of increased protein in the aqueous
-humour.
+and into the aqueous. Clinically (or grossly), this manifests as an
+accumulation of cells and/or protein in the anterior chamber. Hyphema is
+the presence of hemorrhage within the anterior chamber, while hypopyon
+is an accumulation of neutrophils. Aqueous flare is the clinically
+visualized presence of increased protein in the aqueous humour.
 
 Corneal edema is a reasonably common clinically observed secondary
 effect of uveitis. It can result from damage to the corneal endothelium,
@@ -585,20 +646,22 @@ adherence of the iris to the cornea (anterior synechia) or to the lens
 (posterior synechia).
 
 A common sequela of inflammation is the development of granulation
-tissue, and the eye is no exception. Unfortunately for vision, the
-delicate and carefully organized structures of the eye are frequently
-altered by these membranes of granulation tissue. The exact consequence
-of the membrane depends on the location in which it forms: a pre-iridal
-fibrovascular membrane, for example, forms on the surface of the iris
-and may a) grow over the iridocorneal angle, leading to glaucoma (see
-the section on \protect\hyperlink{glaucoma}{Glaucoma} for more details);
-or it may b) grow over the pupil, leading to complete pupillary block
-and iris bombe; or it may c) simply cover the iris, and following
-maturation and contraction, deviate the free edge of the iris forward,
-leading to ectropion uvea. Alternatively, a membrane developing in the
-posterior segment over the choroid, known as a cyclitic membrane, may
-lead to retinal detachment as it matures and contracts (known as
-tractional retinal detachment).
+tissue, and the eye is no exception. In the eye, granulation tissue
+often forms as a membrane that layers pre-existing ocular structures.
+Unfortunately for vision, the delicate and carefully organized
+structures of the eye are frequently altered by these membranes of
+granulation tissue. The exact consequence of the membrane depends on the
+location in which it forms: a pre-iridal fibrovascular membrane, for
+example, forms on the surface of the iris and may a) grow over the
+iridocorneal angle, leading to glaucoma (see the section on
+\protect\hyperlink{glaucoma}{Glaucoma} for more details); or it may b)
+grow over the pupil, leading to complete pupillary block and iris bombe;
+or it may c) simply cover the iris, and following maturation and
+contraction, deviate the free edge of the iris forward, leading to
+ectropion uvea. Alternatively, a membrane developing in the posterior
+segment over the choroid, known as a cyclitic membrane, may lead to
+retinal detachment as it matures and contracts (known as tractional
+retinal detachment).
 
 The lens, too, is susceptible to the secondary effects of uveitis.
 Cataracts may develop, possibly a result of uveal attachment to its
@@ -611,7 +674,7 @@ There are many causes of uveitis, including a number of infectious
 organisms that we are not going to cover. Below are some of the more
 commonly encountered conditions.
 
-\section{Mycotic endophthalmitis}\label{mycotic-endophthalmitis}
+\subsection{Mycotic endophthalmitis}\label{mycotic-endophthalmitis}
 
 A variety of different fungal organisms can gain access to the eye.
 \emph{Blastomyces dermatitis} is the most frequent in dogs, while
@@ -621,7 +684,7 @@ profound, usually pyogranulomatous endophthalmitis that one would expect
 following a fungal infection. Retinal detachment may result secondary to
 the accumulation of inflammatory exudates.
 
-\section{Uveodermatologic syndrome (Vogt-Koyanagi-Harada-like
+\subsection{Uveodermatologic syndrome (Vogt-Koyanagi-Harada-like
 syndrome)}\label{uveodermatologic-syndrome-vogt-koyanagi-harada-like-syndrome}
 
 This syndrome is relatively frequently seen in dogs, particularly in
@@ -641,25 +704,25 @@ to be most severe, and can lead to
 \protect\hyperlink{pre-iridial-fibrovascular-membranes-pifm}{PIFM}, and
 \protect\hyperlink{glaucoma}{glaucoma.}
 
-\section{Canine adenovirus}\label{canine-adenovirus}
+\subsection{Canine adenovirus}\label{canine-adenovirus}
 
-Although mostly of historical relevance in areas in which widespread
-vaccination is now common, the disease is still certainly still present
-in areas in which it is not.
+In North America, canine adenovirus is mostly of historical relevance
+due to widespread vaccination. In areas with poor vaccination, the
+ocular manifestation of adenovirus is still significant.
 
 In unvaccinated animals -- or, rarely, animals receiving a modified live
 virus -- canine adenovirus infects the uveal and corneal endothelial
 cells. Damage to uveal endothelium can lead to anterior uveitis, while
 corneal edema (due to damage to the corneal endothelium) may develop.
 
-\hypertarget{equine-recurrent-uveitis}{\section{Equine recurrent
+\hypertarget{equine-recurrent-uveitis}{\subsection{Equine recurrent
 uveitis}\label{equine-recurrent-uveitis}}
 
 Equine recurrent uveitis (ERU) is \textbf{the most common cause of
 glaucoma, cataracts, and blindness in horses}. Although the condition
 may start out affecting only one eye, it virtually always ends up being
 bilateral. As it's name suggests, the disease presents as waxing and
-waning episodes of uveitis, that gradually increase in frequency. The
+waning episodes of uveitis that gradually increase in frequency. The
 gross/clinical signs of the disease are, like many ocular diseases, a
 constellation of lesions that require an astute ophthalmological exam.
 Uveitis, of course, is one of the main features, manifesting as
@@ -685,41 +748,43 @@ that is \emph{not} conclusive -- that implicates previous exposure or
 infection to \emph{Leptospira interrogans} serovar \emph{pomona} as an
 initiating cause. Many cases have been associated with seropositivity
 for \emph{Leptospira}, and experimental infection can induce the
-disease; however, a significant portion of cases are NOT associated with
-leptospirosis, rendering this hypothesis somewhat flawed. Instead, the
-modern belief is that some initiating cause -- at this point, unknown --
-causes a uveitis that \emph{alters the normal immune privilege status of
-the eye}. Proteins within the eye that were previously restricted may
-become accessible to the immune system, and become antigenic stimuli as
-a result; similarly, antibodies generated through exposure to exogenous
-sources that may cross-react with ocular antigens may now have access to
-ocular structures. This breakdown in ocular immune privilege is what may
-lead to the continuing inflammation within the eye, and regardless of
-the initial cause, is probably the more important aspect of the disease.
+disease; however, \textbf{a significant portion of cases are not
+associated with leptospirosis}, rendering this hypothesis somewhat
+flawed. Instead, the modern belief is that some initiating cause -- at
+this point, unknown -- causes a uveitis that \emph{alters the normal
+immune privilege status of the eye}. Proteins within the eye that were
+previously restricted may become accessible to the immune system, and
+become antigenic stimuli as a result; similarly, antibodies generated
+through exposure to exogenous sources that may cross-react with ocular
+antigens may now have access to ocular structures. This breakdown in
+ocular immune privilege is what may lead to the continuing inflammation
+within the eye, and regardless of the initial cause, is probably the
+more important aspect of the disease.
 
-\hypertarget{feline-lymphonodular-uveitis}{\section{Feline lymphonodular
-uveitis}\label{feline-lymphonodular-uveitis}}
+\hypertarget{feline-lymphonodular-uveitis}{\subsection{Feline
+lymphonodular uveitis}\label{feline-lymphonodular-uveitis}}
 
 Feline lymphonodular uveitis, also known as feline lymphoplasmacytic
 uveitis, is the most common cause of uveitis in the cat, and along with
 \protect\hyperlink{diffuse-iris-melanoma}{Diffuse iris melanoma}, is one
-of the top causes of feline glaucoma. The condition generally starts of
+of the top causes of feline glaucoma. The condition generally starts off
 unilaterally, however, the contralateral eye is to be considered at
 risk.
 
 Cats with the condition may present with one or more of the following
-symptoms: corneal edema with neovascularization; keratitic precipitates;
-and/or thickened irides. Eventually, glaucoma may develop, though the
-mechanism through which this occurs is unknown. Microscopically, the
-disease is characterized (as expected) by lymphoplasmacytic inflammation
-of the uvea, particularly within the iris, where lymphoid nodules may
-develop in severe cases.
+symptoms: corneal edema with neovascularization; keratitic precipitates
+(cellular deposits on the corneal endothelium); and/or thickened irides.
+Eventually, glaucoma may develop, though the mechanism through which
+this occurs is unknown. Microscopically, the disease is characterized
+(as expected) by lymphoplasmacytic inflammation of the uvea,
+particularly within the iris, where lymphoid nodules may develop in
+severe cases.
 
 The cause of feline lymphondular uveitis is unknown, but the
 pathogenesis is thought to be similar to
 \protect\hyperlink{equine-recurrent-uveitis}{ERU}.
 
-\section{Feline infectious
+\subsection{Feline infectious
 peritonitis}\label{feline-infectious-peritonitis}
 
 As with other locations in the body, feline infectious peritonitis virus
@@ -729,7 +794,7 @@ the anterior uvea, tends to predominate. Grossly, anterior uveitis,
 manifesting as aqueous flare, is common. Diagnosis cannot be made on
 histopathology alone; ancillary diagnostics (e.g.~IHC) are required.
 
-\section{Bovine MCF-associated
+\subsection{Bovine MCF-associated
 uveitis}\label{bovine-mcf-associated-uveitis}
 
 Malignant catarrhal fever virus causes a vasculitis with invasion of the
@@ -738,7 +803,7 @@ Uveitis and corneal edema are noted grossly, and, when considered with
 the other gross lesions of MCF, the corneal edema can be particularly
 useful in helping distinguish between MCF and other mucosal diseases.
 
-\section{Lens-induced uveitis}\label{lens-induced-uveitis}
+\subsection{Lens-induced uveitis}\label{lens-induced-uveitis}
 
 (Please refer to the section on the
 \protect\hyperlink{pathology-of-the-lens}{lens} for more information on
@@ -750,7 +815,7 @@ these proteins to the immune system can therefore elicit an immune
 response, the severity of which depends to some degree on the amount of
 protein encountered.
 
-\subsection{Phacolytic uveitis}\label{phacolytic-uveitis}
+\subsubsection{Phacolytic uveitis}\label{phacolytic-uveitis}
 
 Phacolytic uveitis refers to a mild to moderate lymphoplasmacytic
 uveitis resulting from the \textbf{leakage of liquefied lens protein
@@ -763,7 +828,7 @@ anterior uveitis based on histopathology (see
 and \protect\hyperlink{feline-lymphonodular-uveitis}{Feline
 lymphonodular uveitis}.
 
-\subsection{Phacoclastic uveitis}\label{phacoclastic-uveitis}
+\subsubsection{Phacoclastic uveitis}\label{phacoclastic-uveitis}
 
 In contrast to the relatively mild inflammatory response in a phacolytic
 uveitis, the inflammation in phacoclastic uveitis is severe, profound,
@@ -782,7 +847,7 @@ In rabbits, infection with \emph{Encephalitozoon cuniculi} can lead to a
 phacoclastic uveitis, presumably through infection derived weakening of
 the lens capsule. The inflammation is characteristically granulomatous.
 
-\hypertarget{diffuse-iris-melanoma}{\section{Diffuse iris
+\hypertarget{diffuse-iris-melanoma}{\subsection{Diffuse iris
 melanoma}\label{diffuse-iris-melanoma}}
 
 \textbf{This is an important (and contentious!) condition seen in cats}.
@@ -806,11 +871,11 @@ waiting until complications (i.e.
 \protect\hyperlink{glaucoma}{Glaucoma}) have occurred prior to
 enucleation.
 
-\hypertarget{canine-anterior-uvea-melanocytoma}{\section{Canine anterior
-uvea melanocytoma}\label{canine-anterior-uvea-melanocytoma}}
+\hypertarget{canine-anterior-uvea-melanocytoma}{\subsection{Canine
+anterior uvea melanocytoma}\label{canine-anterior-uvea-melanocytoma}}
 
-This is the most frequent ocular tumour of dogs. It presents as an
-expansile mass originating from the root of the iris that is usually
+\textbf{This is the most frequent ocular tumour of dogs}. It presents as
+an expansile mass originating from the root of the iris that is usually
 pigmented. Prognosis based on clinical/gross appearance is challenging:
 a small proportion (\textasciitilde{} 5\%) are malignant and have true
 metastatic potential, but this determination is based on histopathology,
@@ -819,7 +884,7 @@ histologically benign may represent a significant problem for the globe,
 as most will grow to occlude the ciliary cleft, leading to
 \protect\hyperlink{glaucoma}{Glaucoma}.
 
-\hypertarget{pathology-of-the-lens}{\chapter{Pathology of the
+\hypertarget{pathology-of-the-lens}{\section{Pathology of the
 lens}\label{pathology-of-the-lens}}
 
 The lens is a disc-like structure suspended by zonules at the posterior
@@ -828,28 +893,37 @@ on the diffusion of nutrients from the aqueous humour. It's deceptively
 simple appearance belies it's important function: the refraction of
 light onto the retina to provide focus.
 
-The lens is a living tissue, albeit a relatively simple one. It is
-enclosed by the lens capsule, which is the basement membrane of the lens
-epithelial cells that make up the body of the lens. The capsule is
-\emph{impermeable to large proteins, but allows the entry of water and
-other nutrients, making the lens an immunologically privileged site}.
-The lens epithelium lines the anterior half (and \emph{only} the
-anterior half) of the lens capsule in a single, cuboidal layer. The lens
-epithelium is mitotically active, and continually divides to produce
-additional epithelial cells. These cells migrate centrally and elongate,
-forming the long fibers that make up the lens. As the epithelial cells
-differentiate, they lose their nuclei and organelles, forming the clear
-structure important to its function. Like the cornea, the lens maintains
-itself in a dehydrated state to help maintain its clarity; this is
-mediated by an active Na-K pump located on the anterior lens epithelial
-cells.
+The lens is a living tissue, albeit a relatively simple one (See Figure
+\ref{fig:lens}). It is enclosed by the lens capsule, which is the
+basement membrane of the lens epithelial cells that make up the body of
+the lens. The capsule is \emph{impermeable to large proteins, but allows
+the entry of water and other nutrients, making the lens an
+immunologically privileged site}. The lens epithelium lines the anterior
+half (and \emph{only} the anterior half) of the lens capsule in a
+single, cuboidal layer. The lens epithelium is mitotically active, and
+continually divides to produce additional epithelial cells. These cells
+migrate centrally and elongate, forming the long fibers that make up the
+lens. As the epithelial cells differentiate, they lose their nuclei and
+organelles, forming the clear structure important to its function. Like
+the cornea, the lens maintains itself in a dehydrated state to help
+maintain its clarity; this is mediated by an active Na-K pump located on
+the anterior lens epithelial cells.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/lens3x} 
+
+}
+
+\caption{An anterior-posterior illustration of the lens, demonstrating the anterior epithelium, nuclear bow, lens capsule, and lens fibers.}\label{fig:lens}
+\end{figure}
 
 The lens survives mainly on glucose delivered by the aqueous humour,
 which is metabolized via anaerobic glycolysis and the hexokinase pathway
 to produce energy. This small piece of information is a \emph{critical
 component to the understanding of the pathophysiology of cataracts}.
 
-\section{Cataract}\label{cataract}
+\subsection{Cataract}\label{cataract}
 
 A cataract is defined as opacification of the lens. When severe, it is
 readily diagnosed on histopathology, however, ophthalmological exam is a
@@ -869,7 +943,7 @@ known as bladder cells. Existing lens fibers may liquefy and fragment,
 forming characteristic globules of denatured lens proteins known as
 Morgagnian globules.
 
-With their superiority ability to visualize and evaluate cataracts,
+With their superior ability to visualize and evaluate cataracts,
 ophthalmologists are also able to classify cataracts in a variety of
 different ways, including age of onset (e.g.~juvenile vs senile),
 anatomic location (e.g.~subcapsular vs.~equatorial), extent (mature
@@ -878,7 +952,7 @@ pathology, and not ophthalmology, we will focus primarily on classifying
 cataracts according to their pathophysiology, rather than through other
 metrics.
 
-\subsection{Inherited}\label{inherited}
+\subsubsection{Inherited}\label{inherited}
 
 Inherited cataracts are most commonly reported in dogs, and are
 relatively infrequent in other species. They may be congenital or may
@@ -888,10 +962,10 @@ breed predispositions, the age of presentation, and the ophthalmologic
 type of cataract. Histopathology alone \emph{cannot} distinguish between
 types of cataracts.
 
-\subsection{Diabetic cataracts}\label{diabetic-cataracts}
+\subsubsection{Diabetic cataracts}\label{diabetic-cataracts}
 
 Diabetic cataracts are one of the most frequently encountered type of
-cataract seen by practitioners. They are most common in dogs.
+cataract seen by practitioners. \textbf{They are most common in dogs}.
 
 The pathogenesis of diabetic cataracts relates to the metabolism of
 glucose. As noted earlier, the lens absorbs glucose from the aqueous
@@ -901,9 +975,9 @@ glucose in the blood and aqueous is elevated, and excess glucose enters
 the lens. The concentration of glucose overwhelms the hexokinase pathway
 and is shunted into the aldose reductase pathway, which results in the
 production of \textbf{sorbitol}. Sorbitol is too large to exit the lens,
-and causes an increase in the osmotic pressure within the lens, leading
-to influx of water. The end result is hydropic rupture of lens fibers
-that manifests clinically as a cataract.
+and as it accumulates, it causes an increase in the osmotic pressure
+within the lens, leading to influx of water. The end result is hydropic
+rupture of lens fibers that manifests clinically as a cataract.
 
 \emph{Microscopically, there is nothing distinctive about a diabetic
 cataract}. The diagnosis is based on clinical signs, symptoms, diagnosis
@@ -914,19 +988,21 @@ leads to cataract. It would appear that there are species differences in
 the amounts of aldose reductase within the lens, and it is these
 differences that are thought to contribute to the frequency of diabetic
 cataracts in different species. For example, although diabetes mellitus
-is relatively common in cats, diabetic cataracts are rare.
+is relatively common in cats, diabetic cataracts are rare, because the
+concentration of aldose reducates within their lens is low.
 
-\subsection{Other causes of cataracts}\label{other-causes-of-cataracts}
+\subsubsection{Other causes of
+cataracts}\label{other-causes-of-cataracts}
 
-There are several other causes of cataracts that may be encountered.
-Nutritional cataracts are best described in carnivores that have been
-fed milk replacer, but the pathogenesis is unclear.
+There are several other causes of cataracts. Nutritional cataracts are
+best described in carnivores that have been fed milk replacer, but the
+pathogenesis is unclear.
 
-Radiation therapy is also a well-known risk factor for the development
-of cataracts. Cataracts may develop approximately 6-12 months
-post-therapy, and the risk of development is dependent on the dose
-received during treatment. The underlying pathogenesis relates to
-necrosis of the equatorial germinal lens epithelial cells.
+Radiation therapy is a well-known risk factor for the development of
+cataracts. Cataracts may develop approximately 6-12 months post-therapy,
+and the risk of development is dependent on the dose received during
+treatment. The underlying pathogenesis relates to necrosis of the
+equatorial germinal lens epithelial cells.
 
 Infectious agents may also lead to cataracts. In cattle, infection with
 bovine viral diarrhea virus (BVDV) \emph{in utero} is associated with
@@ -937,7 +1013,7 @@ Finally, luxation of the lens may result in cataract through unknown
 means, though it is thought that disruption of nutrition is the
 underlying cause.
 
-\section{Luxation}\label{luxation}
+\subsection{Luxation}\label{luxation}
 
 Lens luxation (dislocation) may be complete or partial (subluxation). It
 is a gross or clinical diagnosis: sectioning of the globe for histologic
@@ -956,9 +1032,9 @@ may include trauma, weakened zonules due to a greatly expanded
 glaucomatous globe, or zonules weakened secondarily to uveitis. Note
 that glaucoma can both cause and be the result of lens luxation, and
 that it can be difficult to separate cause and effect when presented
-with a snapshot of the lesions.
+with a one-time snapshot of the lesions.
 
-\section{Feline post-traumatic ocular
+\subsection{Feline post-traumatic ocular
 sarcoma}\label{feline-post-traumatic-ocular-sarcoma}
 
 Cats suffering trauma or damage to the lens may present months to years
@@ -970,11 +1046,11 @@ epithelium, possibly mirroring the pathogenesis of
 post-vaccinal/injection site sarcoma that is occasionally seen in cats.
 
 Grossly, the neoplasm is grey to white and proliferative, often
-compressing the lens. The mass expands and grows along the circumference
+compresses the lens. The mass expands and grows along the circumference
 of the globe, and is ultimately invasive, frequently infiltrating into
 the optic nerve or sclera.
 
-\chapter{Pathology of the globe}\label{pathology-of-the-globe}
+\section{Pathology of the globe}\label{pathology-of-the-globe}
 
 Although many ocular diseases in reality affect most portions of the
 globe, in this section we will deal primarily with conditions that have
@@ -984,7 +1060,7 @@ discussed below are relatively uncommon, especially when compared to the
 incidence of glaucoma, which is a \textbf{complex, common, and important
 condition, and one that you should know thoroughly}.
 
-\hypertarget{glaucoma}{\section{Glaucoma}\label{glaucoma}}
+\hypertarget{glaucoma}{\subsection{Glaucoma}\label{glaucoma}}
 
 Glaucoma is a clinical diagnosis and is by defined by a sustained and
 damaging increase in intraocular pressure (IOP). Glaucoma has many
@@ -1056,7 +1132,7 @@ Cornea:
 \item
   The corneal endothelium may be damaged by a) direct pressure; b) lack
   of proper aqueous flow (remember, the endothelium obtains nutrients,
-  etc, from aqueous); and c) a stretched globe will result in a
+  etc, from aqueous); and c) a stretched globe that results in a
   stretched and permeable endothelial barrier. These changes result in
   corneal edema.
 \end{itemize}
@@ -1119,8 +1195,8 @@ Optic nerve:
   \begin{itemize}
   \tightlist
   \item
-    Cupping of the optic disc is a \emph{pathognomonic} lesions: in
-    other words, it is a lesion found uniquely in glaucomatous globes.
+    Cupping of the optic disc is a \emph{pathognomonic} lesion: in other
+    words, it is a lesion found uniquely in glaucomatous globes.
   \end{itemize}
 \end{itemize}
 
@@ -1129,10 +1205,10 @@ underlying cause of increased IOP. The etiologies of glaucoma are many
 and varied, and broadly can be divided into two categories: primary and
 secondary glaucoma.
 
-\subsection{Primary glaucoma}\label{primary-glaucoma}
+\subsubsection{Primary glaucoma}\label{primary-glaucoma}
 
-Primary glaucomas arise without significant \textbf{acquired} alteration
-or disease to other structures of the globe. Primary glaucomas can be
+Primary glaucomas arise \textbf{without significant acquired alteration
+or disease to other structures of the globe}. Primary glaucomas can be
 subdivided further into those which show maldevelopment of the
 trabecular meshwork at the iridocorneal angle, a phenomenon known as
 \textbf{goniodysgenesis}, and those which do not, typically referred to
@@ -1154,14 +1230,14 @@ Primary open-angle glaucoma is uncommon, and is caused by dysfunctional
 drainage at the iridocorneal angle, rather than abnormal iridocorneal
 anatomy. It occurs in dogs, horses, and cats.
 
-\subsection{Secondary glaucoma}\label{secondary-glaucoma}
+\subsubsection{Secondary glaucoma}\label{secondary-glaucoma}
 
 Secondary glaucoma, as it's name would suggest, is diagnosed when
-changes that are \textbf{acquired} changes to structures of the globe
-that interfere with the drainage of the aqueous humour. If you know and
-understand the path of aqueous outflow, then it is possible, to some
-degree, to intuit some of the changes that might impede the flow of the
-aqueous humor. Some examples include, but are not limited to:
+\textbf{acquired} changes to structures of the globe interfere with the
+drainage of the aqueous humour. If you know and understand the path of
+aqueous outflow, then it is possible, to some degree, to intuit some of
+the changes that might impede the flow of the aqueous humor. Some
+examples include, but are not limited to:
 
 \begin{itemize}
 \tightlist
@@ -1175,7 +1251,7 @@ aqueous humor. Some examples include, but are not limited to:
   Adhesion between the pupil and the iris (posterior synechia)
 \end{itemize}
 
-\hypertarget{pre-iridial-fibrovascular-membranes-pifm}{\subsubsection{Pre-iridial
+\hypertarget{pre-iridial-fibrovascular-membranes-pifm}{\paragraph{Pre-iridial
 fibrovascular membranes
 (PIFM)}\label{pre-iridial-fibrovascular-membranes-pifm}}
 
@@ -1197,10 +1273,10 @@ lens, it can obstruct the flow of aqueous from the posterior chamber,
 resulting in pupillary block and forward bowing of the iris, known as
 iris bombe (``bomb-ay''), and glaucoma.
 
-\textbf{PIFMs are the most common cause of secondary glaucoma in the dog
-and horse}.
+\textbf{PIFMs are the most common cause of secondary glaucoma in the
+dog}.
 
-\subsubsection{Cellular infiltration}\label{cellular-infiltration}
+\paragraph{Cellular infiltration}\label{cellular-infiltration}
 
 As is the case with the drain in a sink, small holes can be easily
 plugged by debris, preventing adequate drainage. In the case of the eye,
@@ -1220,7 +1296,8 @@ glaucoma, and, along with
 \protect\hyperlink{feline-lymphonodular-uveitis}{Feline lymphonodular
 uveitis}, is the main cause of secondary glaucoma in this species.
 
-\section{Developmental abnormalities}\label{developmental-abnormalities}
+\subsection{Developmental
+abnormalities}\label{developmental-abnormalities}
 
 True developmental abnormalities of the globe are rare. They include
 anophthalmia, or complete absence of the eye (extremely rare and usually
@@ -1232,7 +1309,7 @@ portions of the eye).
 A coloboma is a hole in one of the structures of the eye. They can occur
 in the iris, retina, choroid, or optic disc.
 
-\hypertarget{pathology-of-the-retina}{\chapter{Pathology of the
+\hypertarget{pathology-of-the-retina}{\section{Pathology of the
 retina}\label{pathology-of-the-retina}}
 
 The retina is a beautifully complex piece of tissue that functions to
@@ -1258,7 +1335,7 @@ ischemic injury as compared to the outer retina.
 Damage to the retina leads to loss or impairment of vision, and is
 therefore quite important.
 
-\hypertarget{retinal-detachment}{\section{Retinal
+\hypertarget{retinal-detachment}{\subsection{Retinal
 detachment}\label{retinal-detachment}}
 
 Retinal detachment is a common sequela of a number of different
@@ -1268,7 +1345,8 @@ choroid, it quickly becomes hypoxic and atrophic when separated and
 releases angiogenic factors, which can lead to a
 \protect\hyperlink{pre-iridial-fibrovascular-membranes-pifm}{PIFM}.
 
-\section{Progressive retinal atrophy}\label{progressive-retinal-atrophy}
+\subsection{Progressive retinal
+atrophy}\label{progressive-retinal-atrophy}
 
 Progressive retinal atrophy (PRA) is a term applied to a collection of
 diseases with a common outcome: photoreceptor degeneration or disorder.
@@ -1277,14 +1355,14 @@ an inflammatory or toxic cause, and may result in blindness.
 Histopathology is not particularly helpful for determining the
 underlying etiology in these cases: they all have the same appearance.
 
-\section{Collie eye anomaly}\label{collie-eye-anomaly}
+\subsection{Collie eye anomaly}\label{collie-eye-anomaly}
 
 Collie eye anomaly is an \textbf{inherited, congenital, and bilateral
 condition seen in collies and other breeds}. The condition is a failure
 of embryonic development of the choroid, tapetum lucidum, and sclera.
 Choroidal hypoplasia is common, as are colobomas near the optic disc.
 
-\section{Sudden acquired retinal
+\subsection{Sudden acquired retinal
 degeneration}\label{sudden-acquired-retinal-degeneration}
 
 This is a rapidly progressing degeneration of photoreceptors that leads
@@ -1295,7 +1373,7 @@ retinal atrophy. In its chronic stages, it is indistinguishable
 histologically from PRA -- thus, clinical progression is likely to be of
 great help to the pathologist.
 
-\section{Hypertension}\label{hypertension}
+\subsection{Hypertension}\label{hypertension}
 
 Hypertension induced retinopathy is common in dogs and cats. The small
 vessels of the choroid are particularly affected, which therefore leads
@@ -1304,7 +1382,7 @@ hypertensive vessels may lead to retinal detachment through ischemic
 necrosis of the retinal pigmented epithelium, which normally provides a
 barrier against fluid loss from the choroid.
 
-\hypertarget{glossary}{\chapter{Glossary}\label{glossary}}
+\hypertarget{glossary}{\section{Glossary}\label{glossary}}
 
 \begin{description}
 \item[Anophthalmia]
@@ -1353,6 +1431,9 @@ Inflammation of the cornea.
 Liquefactive necrosis of the corneal stroma.
 \item[Limbus]
 The junction of the cornea and the sclera.
+\item[Melting ulcer]
+A rapidly progressing ulcer, in which the ulcer deepens, often leading
+to Descmetocoele.
 \item[Microphthalmia]
 A small globe within a normal orbit.
 \item[Panophthalmitis]
@@ -1372,11 +1453,11 @@ choroid.
 Inflammation of the iris, ciliary body, and choroid.
 \end{description}
 
-\chapter{Ear}\label{ear}
+\section{Ear}\label{ear}
 
-\section{External ear}\label{external-ear}
+\subsection{External ear}\label{external-ear}
 
-\hypertarget{otitis-externa}{\subsection{Otitis
+\hypertarget{otitis-externa}{\subsubsection{Otitis
 externa}\label{otitis-externa}}
 
 Otitis externa will be one of the most common conditions you encounter
@@ -1430,7 +1511,7 @@ condition.
 \protect\hyperlink{aural-hematoma}{Aural hematoma} are relatively common
 complications of otitis externa.
 
-\hypertarget{aural-hematoma}{\subsection{Aural
+\hypertarget{aural-hematoma}{\subsubsection{Aural
 hematoma}\label{aural-hematoma}}
 
 The constant head shaking of dogs with
@@ -1442,7 +1523,7 @@ ear will fibrose and contract, resulting in a cosmetically damage, but
 otherwise functional, ear. Dogs presenting with aural hematomas should
 be checked for \protect\hyperlink{otitis-externa}{Otitis externa}.
 
-\subsection{Parasitic diseases}\label{parasitic-diseases}
+\subsubsection{Parasitic diseases}\label{parasitic-diseases}
 
 There are a number of ectoparasites that affect the ears. Of the most
 important is \emph{Otodectes cynotis}, especially in cats, in which they
@@ -1450,21 +1531,21 @@ often cause a secondary otitis externa. Infection with \emph{Otodectes}
 results in a thick, waxy, brown discharge that obstructs the ear canal.
 Auricles are often alopecic.
 
-\subsection{Neoplasia}\label{neoplasia}
+\subsubsection{Neoplasia}\label{neoplasia}
 
 Unlike the inflammatory conditions of the ear, neoplasms are typically
 unilateral. Several of the common dermal neoplasms, including
 histiocytomas, sebaceous gland tumours, mast cell tumours, and plasma
 cell tumours, can occur in the ear.
 
-\subsubsection{Squamous cell carcinoma}\label{squamous-cell-carcinoma}
+\paragraph{Squamous cell carcinoma}\label{squamous-cell-carcinoma}
 
 Squamous cell carcinoma of the ear is an invasive and malignant neoplasm
 most commonly seen in white cats, and is believed to be the result of UV
 radiation. They are typically raised, nodular, and ulcerated. Metasasis
 through vascular or lymphatic invasion is relatively common.
 
-\subsubsection{Ceruminous gland
+\paragraph{Ceruminous gland
 adenocarcinoma}\label{ceruminous-gland-adenocarcinoma}
 
 Cerumins gland adenocarcinomas comprise approximately 2 \% of all feline
@@ -1472,9 +1553,9 @@ neoplasms, making them an important condition. They are the exception to
 the rule of unilateral neoplasia: approximately 25 \% of cases have a
 bilateral presenation.
 
-\section{Middle ear}\label{middle-ear}
+\subsection{Middle ear}\label{middle-ear}
 
-\hypertarget{otitis-media}{\subsection{Otitis
+\hypertarget{otitis-media}{\subsubsection{Otitis
 media}\label{otitis-media}}
 
 Otitis media affects all species, but is least common in the cat. It is
@@ -1502,7 +1583,7 @@ Otitis media may be unilateral or bilateral. Inflammation is typical, as
 is exudate within the tympanic bulla, either purulent or caseous. Severe
 inflammation may lead to lysis of the bony ossicles.
 
-\subsection{Inflammatory polyps}\label{inflammatory-polyps}
+\subsubsection{Inflammatory polyps}\label{inflammatory-polyps}
 
 These are extremely common in cats, and are typically found in
 \emph{young} animals. They are thought to originate from the middle ear,
